@@ -36,16 +36,19 @@ class Enemy {
     this.domElement = document.createElement('img');
 
     // We give it a src attribute to specify which image to display.
-    this.domElement.src = './images/enemy.png';
+    this.domElement.src = './images/saibaman.png';
+ 
     // We modify the CSS style of the DOM node.
     this.domElement.style.position = 'absolute';
     this.domElement.style.left = `${this.x}px`;
     this.domElement.style.top = `${this.y}px`;
     this.domElement.style.zIndex = 5;
+    this.domElement.style.width = `75px`;
+    this.domElement.style.height = `90px`;
 
     // Show that the user can actually see the img DOM node, we append it to the root DOM node.
     theRoot.appendChild(this.domElement);
-    this.speed = Math.random() / 2 + 0.25;
+    this.speed = Math.random() / 3 + 0.15;
   }
 
   // We set the speed property of the enemy. This determines how fast it moves down the screen.
@@ -66,6 +69,27 @@ class Enemy {
       this.root.removeChild(this.domElement);
 
       this.destroyed = true;
-    }
+    } 
+//    if (this.y > GAME_HEIGHT - PLAYER_HEIGHT - ENEMY_HEIGHT && this.x === gameEngine.player.x){
+  // BREAK THIS IF STATEMENT TO TEST WITHOUT ENEMIES
+       if (this.y >= (gameEngine.player.y - ENEMY_HEIGHT + 11) 
+       && this.y < gameEngine.player.y + PLAYER_HEIGHT
+       && this.x === gameEngine.player.x){
+      this.root.removeChild(this.domElement);
+      document.getElementById(`heart${gameEngine.player.lives}`).remove();
+      this.destroyed = true;
+      gameEngine.player.lives--;
+  //   gameEngine.player.lives === 0 ? gameEngine.isDead = true : gameEngine.isDead = false;
+      if (gameEngine.player.lives === 0){
+        gameEngine.isDead = true;
+         }
+}
   }
+
+// Done -  ROB ; CREATE A FUNCTION OR MODIFY UPDATE FOR THE ENEMY TO DISAPPEAR IF IT COLLIDES WITH THE PLAYER
+
+// pseudo
+// if Player.x = enemy.x && enemy y height > player y height 
+// this.root.removeChild(this.domElement);
+
 }

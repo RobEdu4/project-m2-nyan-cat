@@ -1,0 +1,20 @@
+#scoreText {
+  background: rgb(255, 252, 0);
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(235, 148, 17, 1) 38%,
+    rgba(228, 255, 0, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#youLose {
+  position: absolute;
+  left: 30%;
+  top: 42%;
+  transform: translateX(-50%) translateY(-70%);
+  font-family: "Secular One", sans-serif;
+  text-shadow: 7px 3px 8px #ce5937;
+}

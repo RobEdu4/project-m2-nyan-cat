@@ -43,7 +43,7 @@ const addBackground = (root) => {
   const bg = document.createElement('img');
 
   // We set its src attribute and the height and width CSS attributes
-  bg.src = 'images/stars.png';
+  bg.src = 'images/dbbg3.jpg';
   bg.style.height = `${GAME_HEIGHT}px`;
   bg.style.width = `${GAME_WIDTH}px`;
 
@@ -56,11 +56,101 @@ const addBackground = (root) => {
   const whiteBox = document.createElement('div');
 
   // We put a high z-index so that the div is placed over all other DOM nodes
-  whiteBox.style.zIndex = 100;
+  whiteBox.style.zIndex = 99;
   whiteBox.style.position = 'absolute';
   whiteBox.style.top = `${GAME_HEIGHT}px`;
   whiteBox.style.height = `${ENEMY_HEIGHT}px`;
   whiteBox.style.width = `${GAME_WIDTH}px`;
   whiteBox.style.background = '#fff';
   root.append(whiteBox);
+
+
+// HEARTS TEST
+
+  const heart1 = document.createElement('img');
+  const heart2 = document.createElement('img');
+  const heart3 = document.createElement('img');
+
+  heart1.id = `heart1`
+  heart1.src = 'images/health.png';
+  heart1.style.position = "absolute";
+  heart1.style.height = `25px`;
+  heart1.style.width = `25px`;
+  heart1.style.top = `40px`;
+  heart1.style.left = GAME_WIDTH - 50;
+  heart1.style.zIndex = 100;
+ 
+  heart2.id = `heart2`
+  heart2.src = 'images/health.png';
+  heart2.style.position = "absolute";
+  heart2.style.height = `25px`;
+  heart2.style.width = `25px`;
+  heart2.style.top = `40px`;
+  heart2.style.left = GAME_WIDTH - 80;
+  heart2.style.zIndex = 100;
+
+  heart3.id = `heart3`
+  heart3.src = 'images/health.png';
+  heart3.style.position = "absolute";
+  heart3.style.height = `25px`;
+  heart3.style.width = `25px`;
+  heart3.style.top = `40px`;
+  heart3.style.left = GAME_WIDTH - 110;
+  heart3.style.zIndex = 100;
+
+  root.appendChild(heart1);
+  root.appendChild(heart2);
+  root.appendChild(heart3);
+
+ 
+  // const heartRow = document.createElement("div");
+  // hpRow.id = `heartRow`;
+  // root.append(heartRow);
+  // for (let i = 1; i <= MAX_LIVES; i++){
+  //   const heart = document.createElement("div");
+
+  //   heart.id = `heart-${i}`;
+  //   document.heart.style.backgroundImage = "url('./images/health.png')";
+
+  //   heartRow.appendChild(heart);
+  // }
 };
+
+const addScore = (root) => {
+  const scoreBox = document.createElement('div');
+  scoreBox.style.zIndex = 98;
+  scoreBox.style.position = 'absolute';
+  scoreBox.style.top = `-20px`;
+  scoreBox.style.left = `40px`;
+
+  scoreBox.style.width = `500px`;
+ 
+  scoreBox.color = '#ffffff';
+  root.append(scoreBox);
+  const scoreText = document.createElement('p');
+  scoreText.style.fontSize = `50px`;
+  scoreText.style.position = "absolute";
+  scoreText.style.fontFamily = `Lobster, cursive`;
+  scoreText.innerText = "0";
+  scoreText.id = "scoreText";
+
+  scoreBox.appendChild(scoreText);
+};
+
+
+// const addLives = (root) => {
+//    console.log("anything");
+//   const heart1 = document.createElement('img');
+//   const heart2 = document.createElement('img');
+//   const heart3 = document.createElement('img');
+
+//   heart1.src = 'images/health.png';
+//   heart1.style.height = `525px`;
+//   heart1.style.width = `525px`;
+//   heart1.style.top = `-20px`;
+//   heart1.style.left = `40px`;
+//   heart1.style.zIndex = 100;
+ 
+//   root.append(heart1);
+
+// };

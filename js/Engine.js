@@ -15,8 +15,14 @@ class Engine {
     // that contains instances of the Enemy class
     this.enemies = [];
     // We add the background image to the game
+    this.isDead = false;
+    this.score = 0;
     addBackground(this.root);
+    addScore(this.root);
+//addLives(this.root);
   }
+
+ 
 
   // The gameLoop will run every few milliseconds. It does several things
   //  - Updates the enemy positions
@@ -31,13 +37,29 @@ class Engine {
     }
 
     let timeDiff = new Date().getTime() - this.lastFrame;
+    const scoreText = document.getElementById("scoreText");
 
+    if (this.player.y <= 177.5){
+      this.score += Math.floor(timeDiff * 1.75);
+      scoreText.innerText = `${this.score}`;
+    } else {
+      this.score += timeDiff;
+      scoreText.innerText = this.score;
+    }
+    // this.score += timeDiff;
     this.lastFrame = new Date().getTime();
     // We use the number of milliseconds since the last call to gameLoop to update the enemy positions.
     // Furthermore, if any enemy is below the bottom of our game, its destroyed property will be set. (See Enemy.js)
+    
     this.enemies.forEach((enemy) => {
       enemy.update(timeDiff);
     });
+
+
+    // for (let i = 0; i < this.enemies.length; i++){
+    //   console.log(i);
+    //   enemies[i].update(timeDiff);
+    // }
 
     // We remove all the destroyed enemies from the array referred to by \`this.enemies\`.
     // We use filter to accomplish this.
@@ -57,7 +79,15 @@ class Engine {
     // We check if the player is dead. If he is, we alert the user
     // and return from the method (Why is the return statement important?)
     if (this.isPlayerDead()) {
-      window.alert('Game over');
+      this.player.domElement.src = 'images/yamchadead.png';
+      const youLose = document.createElement('h1');
+      youLose.id = 'youLose';
+      youLose.style.color = 'white';
+      youLose.style.fontSize = '72px';
+      youLose.innerText = "YOU LOSE !";
+      youLose.style.zIndex = 10000;
+      this.root.appendChild(youLose);
+    
       return;
     }
 
@@ -68,6 +98,13 @@ class Engine {
   // This method is not implemented correctly, which is why
   // the burger never dies. In your exercises you will fix this method.
   isPlayerDead = () => {
-    return false;
+// METHOD TO BE FIXED TO END THE GAME
+// make an if statement that checks for collision
+    if(this.isDead){
+      return true;
+    } else {
+      return false;
+    }
   };
 }
+
