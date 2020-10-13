@@ -1,7 +1,3 @@
-
-
-
-
 const gameEngine = new Engine(document.getElementById('app'));
 
 
@@ -27,11 +23,11 @@ const keydownHandler = (event) => {
   //   gameEngine.player.moveUp();
   // }
 
-  if (event.key === 'w'){
+  if (event.key === 'w') {
     gameEngine.player.moveUp();
   }
 
-  if (event.key === 's'){
+  if (event.key === 's') {
     gameEngine.player.moveDown();
   }
 

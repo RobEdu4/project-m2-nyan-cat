@@ -14,10 +14,11 @@ class Player {
     this.y = GAME_HEIGHT - PLAYER_HEIGHT - 10;
 
     this.lives = 3;
-    
+
     // We create a DOM node. We will be updating the DOM node every time we move the player, so we store a reference to the
     // DOM node in a property.
     this.domElement = document.createElement('img');
+    this.domElement.id = 'playerEle';
     this.domElement.src = 'images/yamcha.png';
     this.domElement.style.height = `125px`;
     this.domElement.style.width = `75px`;
@@ -49,19 +50,19 @@ class Player {
 
   //move up / down 
 
-  moveUp(){
-    if (this.y > 84){
-    this.y = this.y - (PLAYER_HEIGHT * 0.75);
+  moveUp() {
+    if (this.y > 84) {
+      this.y = this.y - (PLAYER_HEIGHT * 0.75);
     }
     this.domElement.style.top = `${this.y}px`;
   }
 
 
-  moveDown(){
-    if (this.y < GAME_HEIGHT - PLAYER_HEIGHT - 10){
-    this.y = this.y + (PLAYER_HEIGHT * 0.75);
-  }
-    this.domElement.style.top = `${this.y}px`; 
+  moveDown() {
+    if (this.y < GAME_HEIGHT - PLAYER_HEIGHT - 10) {
+      this.y = this.y + (PLAYER_HEIGHT * 0.75);
+    }
+    this.domElement.style.top = `${this.y}px`;
   }
 
 }
