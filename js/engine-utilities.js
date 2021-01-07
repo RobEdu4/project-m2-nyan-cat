@@ -65,42 +65,44 @@ const addBackground = (root) => {
   root.append(whiteBox);
 
 
-// HEARTS TEST
+// HEARTS / LIVES
 
-  const heart1 = document.createElement('img');
-  const heart2 = document.createElement('img');
-  const heart3 = document.createElement('img');
+  // const heart1 = document.createElement('img');
+  // const heart2 = document.createElement('img');
+  // const heart3 = document.createElement('img');
 
-  heart1.id = `heart1`
-  heart1.src = 'images/health.png';
-  heart1.style.position = "absolute";
-  heart1.style.height = `25px`;
-  heart1.style.width = `25px`;
-  heart1.style.top = `40px`;
-  heart1.style.left = GAME_WIDTH - 50;
-  heart1.style.zIndex = 100;
+  // heart1.id = `heart1`
+  // heart1.src = 'images/health.png';
+  // heart1.style.position = "absolute";
+  // heart1.style.height = `25px`;
+  // heart1.style.width = `25px`;
+  // heart1.style.top = `40px`;
+  // heart1.style.left = GAME_WIDTH - 50;
+  // heart1.style.zIndex = 100;
  
-  heart2.id = `heart2`
-  heart2.src = 'images/health.png';
-  heart2.style.position = "absolute";
-  heart2.style.height = `25px`;
-  heart2.style.width = `25px`;
-  heart2.style.top = `40px`;
-  heart2.style.left = GAME_WIDTH - 80;
-  heart2.style.zIndex = 100;
+  // heart2.id = `heart2`
+  // heart2.src = 'images/health.png';
+  // heart2.style.position = "absolute";
+  // heart2.style.height = `25px`;
+  // heart2.style.width = `25px`;
+  // heart2.style.top = `40px`;
+  // heart2.style.left = GAME_WIDTH - 80;
+  // heart2.style.zIndex = 100;
 
-  heart3.id = `heart3`
-  heart3.src = 'images/health.png';
-  heart3.style.position = "absolute";
-  heart3.style.height = `25px`;
-  heart3.style.width = `25px`;
-  heart3.style.top = `40px`;
-  heart3.style.left = GAME_WIDTH - 110;
-  heart3.style.zIndex = 100;
+  // heart3.id = `heart3`
+  // heart3.src = 'images/health.png';
+  // heart3.style.position = "absolute";
+  // heart3.style.height = `25px`;
+  // heart3.style.width = `25px`;
+  // heart3.style.top = `40px`;
+  // heart3.style.left = GAME_WIDTH - 110;
+  // heart3.style.zIndex = 100;
 
-  root.appendChild(heart1);
-  root.appendChild(heart2);
-  root.appendChild(heart3);
+  // root.appendChild(heart1);
+  // root.appendChild(heart2);
+  // root.appendChild(heart3);
+
+
 
  
   // const heartRow = document.createElement("div");
@@ -117,6 +119,7 @@ const addBackground = (root) => {
 };
 
 const addScore = (root) => {
+  console.log(root);
   const scoreBox = document.createElement('div');
   scoreBox.style.zIndex = 98;
   scoreBox.style.position = 'absolute';
@@ -154,3 +157,46 @@ const addScore = (root) => {
 //   root.append(heart1);
 
 // };
+
+const addLives = (root) => {
+
+
+  const heart1 = document.createElement('img');
+  const heart2 = document.createElement('img');
+  const heart3 = document.createElement('img');
+
+  heart1.id = `heart1`;
+  heart1.src = 'images/health.png';
+  heart1.style.position = "absolute";
+  heart1.style.height = `25px`;
+  heart1.style.width = `25px`;
+  heart1.style.top = `40px`;
+  heart1.style.left = GAME_WIDTH - 50;
+  heart1.style.zIndex = 100;
+ 
+  heart2.id = `heart2`;
+  heart2.src = 'images/health.png';
+  heart2.style.position = "absolute";
+  heart2.style.height = `25px`;
+  heart2.style.width = `25px`;
+  heart2.style.top = `40px`;
+  heart2.style.left = GAME_WIDTH - 80;
+  heart2.style.zIndex = 100;
+
+  heart3.id = `heart3`;
+  heart3.src = 'images/health.png';
+  heart3.style.position = "absolute";
+  heart3.style.height = `25px`;
+  heart3.style.width = `25px`;
+  heart3.style.top = `40px`;
+  heart3.style.left = GAME_WIDTH - 110;
+  heart3.style.zIndex = 100;
+
+  console.log(heart1);
+  console.log(heart2);
+  console.log(heart3);
+
+  root.appendChild(heart1);
+  root.appendChild(heart2);
+  root.appendChild(heart3);
+}

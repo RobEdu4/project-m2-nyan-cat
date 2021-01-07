@@ -17,12 +17,13 @@ class Engine {
     // We add the background image to the game
     this.isDead = false;
     this.score = 0;
+    
     addBackground(this.root);
     addScore(this.root);
-//addLives(this.root);
+    addLives(this.root);
   }
 
- 
+ //test
 
   // The gameLoop will run every few milliseconds. It does several things
   //  - Updates the enemy positions
