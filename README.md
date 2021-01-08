@@ -1,6 +1,6 @@
 # Yamcha's Doom
 
-Relive the meme that is Yamcha's demise
+**Relive the meme that is Yamcha's demise**
 
 ### Movement Controls :
 
